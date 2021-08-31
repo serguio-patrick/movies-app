@@ -7,6 +7,12 @@
 </head>
 <body>
 
+<div id="load"></div>
+<div id="contents">
+    jlkjjlkjlkjlkjlklk
+</div>
+
+
 <nav>
 
     <h1>Movies App</h1>
@@ -14,8 +20,21 @@
 <input type="search" placeholder="search">
     <button type="submit">Submit</button>
 
-    <button id="add">Add</button>
+<!--    <input id="addbar" type="text" placeholder="Add Movie">-->
 
+<!--    <form action="movies-app.js" method="post">-->
+        <ul id="addbar">
+            <li>
+                <input id="addtitle" name="title" type="text" placeholder="Title" />
+            </li>
+            <li>
+                <input id="addrating" name="rating" type="text" placeholder="Rating" />
+            </li>
+<!--            <li>-->
+<!--                <input name="email[]" type="text" placeholder="E-Mail">-->
+<!--            </li>-->
+        </ul>
+        <button id="addbutton">Add</button>
     <button id="delete">Delete</button>
 
 </nav>
@@ -26,6 +45,8 @@
 <div>
     <section id="cards"></section>
 </div>
+
+
 
 </main>
 <!-- Copy and Paste Me-->
@@ -38,7 +59,7 @@
 <!--    </iframe>-->
 <!--</div>-->
 
-<script src="jQuery.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
 <script src="key.js"></script>
 <script src="movies-app.js"></script>
 </body>
