@@ -114,7 +114,7 @@ const getMovies = () => fetch(GLITCH)
                 $('#cards').append('<article>' +
                     '<p>' + movie.title + '</p>' +
                     '<p>' + movie.rating + '</p>' +
-                    '<button class="edit">Edit</button>' +
+                    `<button class="edit" data-id="${movie.id}" >Edit</button>'` +
                     `<button class="delete" data-id="${movie.id}" >Delete</button>` +
                     '</article>');
             });
@@ -124,6 +124,16 @@ const getMovies = () => fetch(GLITCH)
             console.log(id);
             $("article").remove();
             deleteMovie(id);
+
+        });
+
+        $('.edit').click(function () {
+            console.log('hi')
+            var id = $(this).attr("data-id");
+            console.log(id);
+
+            // $("article").remove();
+            // editMovie(id);
 
         });
 
@@ -155,6 +165,7 @@ const editMovie = film => fetch(`${GLITCH}/${film.id}`, {
     .then(res => res.json())
     .then(data => {
         console.log(`Success: edited ${JSON.stringify(data)}`);
+        getMovies();
     })
     .catch(console.error);
 
@@ -171,18 +182,10 @@ const deleteMovie = id => fetch(`${GLITCH}/${id}`, {
 })
     .then(res => res.json())
     .then(() => {
-        console.log(`Success: deleted dog with id of ${id}`);
+        console.log(`Success: deleted movie with id of ${id}`);
         getMovies();
     })
     .catch(console.error);
-
-// $('.delete').click(function () {
-//     console.log('hi')
-//     var id = $(this).attr("data-id");
-//     console.log(id);
-//     // deleteMovie();
-//
-// });
 
 /**
  * Example function to create a new dog object
@@ -205,11 +208,12 @@ const addMovie = (film) => fetch(`${GLITCH}`, {
     .catch(console.error);
 
 $('#addButton').click(function (e) {
-    e.preventDefault();
+    // e.preventDefault();
     let x = $('#addTitle').val();
     let y = $('#addRating').val();
     let mObj = {title: x,rating: y};
     addMovie(mObj);
+
 
 });
 
