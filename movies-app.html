@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Movies App</title>
-    <link rel="stylesheet" href="movies-app.css">
+    <link rel="stylesheet" href="movies-app-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="slideshow" class="container"></div>
 
-<div id="load"></div>
-<div id="contents">
+<!--LOADER-->
+<div id="load" class="loader row">
+    <img src="img/ajax-loader.gif" id="imgSize">
+    hello
+</div>
+<!--<div id="contents">-->
 </div>
 
 
-<nav>
+<h1>Movies App</h1>
 
-    <h1>Movies App</h1>
-
-    <input type="search" id="search-bar" placeholder="search">
-
-    <!--    <input id="addbar" type="text" placeholder="Add Movie">-->
-
-    <!--    <form action="movies-app.js" method="post">-->
+<!--<div id="navbar">-->
+<nav class="navbar">
     <ul id="addbar">
         <li>
-            <input id="addTitle" name="title" type="text" placeholder="Title"/>
+            <input id="addrating" name="rating" type="text" placeholder="Rating"/>
         </li>
         <li>
-            <input id="addRating" name="rating" type="text" placeholder="Rating"/>
+            <input id="addtitle" name="title" type="text" placeholder="Title"/>
         </li>
-        <!--            <li>-->
-        <!--                <input name="email[]" type="text" placeholder="E-Mail">-->
-        <!--            </li>-->
     </ul>
-    <button id="addButton">Add</button>
-
+    <button id="addbutton">Add</button>
 </nav>
+<!--</div>-->
 
 
+<!--MOVIES CARDS-->
 <main>
 
     <div>
@@ -45,6 +46,7 @@
 
 
 </main>
+
 
 <script src="jquery-3.6.0.min.js"></script>
 <script src="key.js"></script>
