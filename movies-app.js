@@ -208,7 +208,8 @@ const addMovie = (film) => fetch(`${GLITCH}`, {
     .catch(console.error);
 
 $('#addButton').click(function (e) {
-    // e.preventDefault();
+    console.log('hi');
+    e.preventDefault();
     let x = $('#addTitle').val();
     let y = $('#addRating').val();
     let mObj = {title: x,rating: y};
